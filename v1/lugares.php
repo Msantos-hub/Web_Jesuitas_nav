@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="general">
-    <img src="imagenes/logotipo.png">
+    <img src="../imagenes/logotipo.png">
     <h1>Lugares visitados por los jesuitas</h1><br/>
         <?php
             require_once 'clasephp.php';
