@@ -33,7 +33,7 @@ while($fila=$objeto->extraerFilas()){
     $idLugar2=$_POST["idLugar"];
     $nombre=$_POST["nombre"];
     if($idLugar2 != NULL && $nombre != NULL){
-        $sql2="UPDATE maquina set (idLugar,nombre) VALUES ('".$idLugar2.",".$nombre."')";
+        $sql2="UPDATE lugar set (idLugar,nombre) VALUES ('".$idLugar2.",".$nombre."')";
         $objeto->realizarConsultas($sql2);
         if($idLugar2 =1){
             header("location:listUsers.php");
