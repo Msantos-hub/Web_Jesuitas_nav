@@ -8,7 +8,7 @@ CREATE TABLE Jesuita(
 );
 
 CREATE TABLE Lugar(
-	idLugar TiNYINT UNSIGNED NOT NULL PRIMARY KEY,
+	idLugar TINYINT UNSIGNED NOT NULL PRIMARY KEY,
 	nombre VARCHAR(30) NOT NULL
 );
 
@@ -17,12 +17,12 @@ CREATE TABLE Maquina(
 	nombreAlumno VARCHAR(50) NULL,
 	Nombre VARCHAR(20) NOT NULL,
 	idJesuita CHAR(15) NULL ,
-	idLugar TiNYINT UNSIGNED NULL,
+	idLugar TINYINT UNSIGNED NULL,
 	tipo CHAR (2) NOT NULL,
 	idUsuario SMALLINT NOT NULL,
 	password varchar(250) NOT NULL,
-	CONSTRAINT FK_MaquinaJesuita1 FOREIGN KEY (idLugar) REFERENCES Lugar(idLugar),
-	CONSTRAINT FK_MaquinaJesuita2 FOREIGN KEY (idJesuita) REFERENCES Jesuita(idJesuita)
+	CONSTRAINT FK_MaquinaLugar FOREIGN KEY (idLugar) REFERENCES Lugar(idLugar),
+	CONSTRAINT FK_MaquinaJesuita FOREIGN KEY (idJesuita) REFERENCES Jesuita(idJesuita)
 );
 
 CREATE TABLE Visita(
@@ -31,8 +31,8 @@ CREATE TABLE Visita(
 	idJesuita CHAR(15) NOT NULL UNIQUE ,
 	idLugar TINYINT UNSIGNED NOT NULL UNIQUE ,
 	fechaHora DATE NOT NULL,
-	CONSTRAINT FK_visitaJesuita1 FOREIGN KEY (idJesuita) REFERENCES Jesuita(idJesuita),
-	CONSTRAINT FK_visitaJesuita2 FOREIGN KEY (idLugar) REFERENCES Lugar(idLugar)
+	CONSTRAINT FK_visitaJesuita FOREIGN KEY (idJesuita) REFERENCES Jesuita(idJesuita),
+	CONSTRAINT FK_visitalugar FOREIGN KEY (idLugar) REFERENCES Lugar(idLugar)
 );
 
 ALTER TABLE Maquina ADD CONSTRAINT CH_tipo CHECK (tipo='a' OR tipo='u');
