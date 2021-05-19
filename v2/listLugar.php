@@ -8,8 +8,8 @@
 <body>
 <?php
 require_once 'clasephp.php';
-$objeto=new clasephp();
-$sql="SELECT * FROM lugar";
+$objeto=new clasephp(); //instancia la clase
+$sql="SELECT * FROM lugar"; //muestra todos los datos de la tabla lugar
 $objeto->realizarConsultas($sql);
 ?>
 <div id="general">
@@ -24,7 +24,7 @@ $objeto->realizarConsultas($sql);
         <tbody>
         <?php
         while($fila=$objeto->extraerFilas()){
-
+            //bucle que  muestra en una tabla todos los datos de la tabla lugar
             ?>
             <tr>
                 <td><?php echo $fila['idLugar'] ?></td>

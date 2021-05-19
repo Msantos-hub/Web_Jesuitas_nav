@@ -29,14 +29,14 @@ while($fila=$objeto->extraerFilas()){
         ?>
     </div>
     <?php
-    $objeto=new clasephp();
-    $idLugar2=$_POST["idLugar"];
+    $objeto=new clasephp();//instancia la clase
+    $idLugar2=$_POST["idLugar"];//recoge los datos del formulario
     $nombre=$_POST["nombre"];
-    if($idLugar2 != NULL && $nombre != NULL){
-        $sql2="UPDATE lugar set (idLugar,nombre) VALUES ('".$idLugar2.",".$nombre."')";
+    if($idLugar2 != NULL && $nombre != NULL){//si los datos no son null entra en el bucle y realiza la consulta
+        $sql2="UPDATE lugar set (idLugar,nombre) VALUES ('".$idLugar2.",".$nombre."')";//realiza la consulta
         $objeto->realizarConsultas($sql2);
         if($idLugar2 =1){
-            header("location:listUsers.php");
+            header("location:listLugar.php"); //si se a añadido un luagr vuevle a la pagina de listado
         }
     }
     ?>
