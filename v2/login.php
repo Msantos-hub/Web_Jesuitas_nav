@@ -2,13 +2,14 @@
 
 include('clasephp.php'); //include la clase
 session_start();//inicia la sesion
+$objeto=new clasephp();
 
 if (isset($_POST['login'])) { //si existe el logeo inicia
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = $connection->prepare("SELECT * FROM users WHERE USERNAME=:username");
+    $query = $objeto->prepare("SELECT * FROM users WHERE USERNAME=:username");
     $query->bindParam("username", $username, PDO::PARAM_STR);
     $query->execute();
 
