@@ -33,22 +33,22 @@
                 }
                 ?>
             </select>
-            <input type="submit" value="Realizar Visita">
+            <input type="submit" value="Realizar Visita" name="enviar">
         </form>
     </div>
     <?php
-    $idJesuita=$_POST['nJesuita'];
-    $idLugar=$_POST['nLugar'];
-    if($idJesuita != NULL && $idLugar != NULL){//si los valores son distintos a null entra en el bucle
-        $sql3="INSERT INTO visita(idJesuita,idLugar) VALUES ('".$idJesuita.",".$idLugar."')";//consulta de insercion de datos
-        $objeto->realizarConsultas($sql3);//consulta de insercion de datos
-        if($idJeusita =1){
-            header("location:listUsers.php");//si hay un usuario vuelve a la pagina anterior
-            echo 'Visita Realizada correctamente.';
-            echo 'Visita Otro lugar';
-        }
-        else{
-            echo 'La visita no se a realizado correctamente';
+    if (isset($_POST['enviar'])) {
+        $idJesuita = $_POST['nJesuita'];
+        $idLugar = $_POST['nLugares'];
+        if ($idJesuita != NULL && $idLugar != NULL) {//si los valores son distintos a null entra en el bucle
+            $sql3 = "INSERT INTO visita(idJesuita,idLugar) VALUES ('" . $idJesuita . "," . $idLugar . "')";//consulta de insercion de datos
+            $objeto->realizarConsultas($sql3);//consulta de insercion de datos
+            if ($idJesuita = 1) {
+                echo 'Visita Realizada correctamente.';
+                echo 'Visita Otro lugar';
+            } else {
+                echo 'La visita no se a realizado correctamente';
+            }
         }
     }
     ?>
