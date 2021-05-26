@@ -13,25 +13,28 @@
     $objeto->realizarConsultas($sql1);
     ?>
     <div id="general">
-        <label>Jesuita</label>
-        <select name="nJesuita">
-            <?php
-            while($fila=$objeto->extraerFilas()) {
-                echo '<option value="'.$fila['idJesuita'].'">'.$fila['nombre'].'</option>';
-            }
-            ?>
-        </select>
-
-        <label>Lugares</label>
-        <select name="nLugares">
-            <<?php
-            $sql2="SELECT * FROM Lugar";
-            $objeto->realizarConsultas($sql2);
-            while($fila=$objeto->extraerFilas()) {
-                echo '<option value="'.$fila['idLugar'].'">'.$fila['nombre'].'</option>';
-            }
-            ?>
-        </select>
+        <h3>Jesuitas Viajeros</h3>
+        <form method="post" id="formvisita">
+            <label>Jesuita</label>
+            <select name="nJesuita">
+                <?php
+                while($fila=$objeto->extraerFilas()) {
+                    echo '<option value="'.$fila['idJesuita'].'">'.$fila['Nombre'].'</option>';
+                }
+                ?>
+            </select>
+            <label>Lugares</label>
+            <select name="nLugares">
+                <<?php
+                $sql2="SELECT * FROM Lugar";
+                $objeto->realizarConsultas($sql2);
+                while($fila=$objeto->extraerFilas()) {
+                    echo '<option value="'.$fila['idLugar'].'">'.$fila['nombre'].'</option>';
+                }
+                ?>
+            </select>
+            <input type="submit" value="Realizar Visita">
+        </form>
     </div>
     <?php
     $idJesuita=$_POST['nJesuita'];
@@ -41,6 +44,11 @@
         $objeto->realizarConsultas($sql3);//consulta de insercion de datos
         if($idJeusita =1){
             header("location:listUsers.php");//si hay un usuario vuelve a la pagina anterior
+            echo 'Visita Realizada correctamente.';
+            echo 'Visita Otro lugar';
+        }
+        else{
+            echo 'La visita no se a realizado correctamente';
         }
     }
     ?>

@@ -103,3 +103,8 @@ button {
 form{
     text-align: left;
 }
+
+#formvisita{
+    margin-left: auto;
+    margin-right: auto;
+}
