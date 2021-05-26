@@ -35,22 +35,23 @@
             </select>
             <input type="submit" value="Realizar Visita" name="enviar">
         </form>
-    </div>
-    <?php
-    if (isset($_POST['enviar'])) {
-        $idJesuita = $_POST['nJesuita'];
-        $idLugar = $_POST['nLugares'];
-        if ($idJesuita != NULL && $idLugar != NULL) {//si los valores son distintos a null entra en el bucle
-            $sql3 = "INSERT INTO visita(idJesuita,idLugar) VALUES ('" . $idJesuita . "," . $idLugar . "')";//consulta de insercion de datos
-            $objeto->realizarConsultas($sql3);//consulta de insercion de datos
-            if ($idJesuita = 1) {
-                echo 'Visita Realizada correctamente.';
-                echo 'Visita Otro lugar';
-            } else {
-                echo 'La visita no se a realizado correctamente';
+        <?php
+        if (isset($_POST['enviar'])) {
+            $idJesuita = $_POST['nJesuita'];
+            $idLugar = $_POST['nLugares'];
+            if ($idJesuita != NULL && $idLugar != NULL) {//si los valores son distintos a null entra en el bucle
+                $sql3="INSERT INTO visita (idJesuita,idLugar) VALUES ('".$idJesuita.",".$idLugar."')";//consulta de insercion de datos
+                $objeto->realizarConsultas($sql3);//consulta de insercion de datos
+                if ($idJesuita = 1) {
+                    echo 'Visita Realizada correctamente.';
+                    echo '<br>';
+                    echo 'Visita Otro lugar.';
+                } else {
+                    echo 'La visita no se a realizado correctamente';
+                }
             }
         }
-    }
-    ?>
+        ?>
+    </div>
 </body>
 </html>
