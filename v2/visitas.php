@@ -40,9 +40,11 @@
             $idJesuita = $_POST['nJesuita'];
             $idLugar = $_POST['nLugares'];
             if ($idJesuita != NULL && $idLugar != NULL) {//si los valores son distintos a null entra en el bucle
-                $sql3="INSERT INTO visita (idJesuita,idLugar) VALUES ('".$idJesuita.",".$idLugar."')";//consulta de insercion de datos
+                $sql3="INSERT INTO visita (ip,idJesuita,idLugar) VALUES ('".$idJesuita."','".$idJesuita."',".$idLugar.")";//consulta de insercion de datos
+                print_r($sql3);
                 $objeto->realizarConsultas($sql3);//consulta de insercion de datos
                 if ($idJesuita = 1) {
+                    echo '<br>';
                     echo 'Visita Realizada correctamente.';
                     echo '<br>';
                     echo 'Visita Otro lugar.';
