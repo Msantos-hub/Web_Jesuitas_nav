@@ -3,7 +3,7 @@
     require_once 'operaciones.php';
     $objeto=new operaciones();
 
-    $sql0="SELECT * FROM maquina WHERE idUsuario=$_POST['idUsuario']";
+    $sql0="SELECT * FROM maquina";
     $objeto->realizarConsultas($sql0);
     $fila=$objeto->extraerFilas();
 
