@@ -1,8 +1,8 @@
 <?php
 
-include('clasephp.php'); //include la clase
+include('operaciones.php'); //include la clase
 session_start();//inicia la sesion
-$objeto=new clasephp();
+$objeto=new operaciones();
 $tipo='u';
 
 if (isset($_POST['login'])) { //si existe el logeo inicia

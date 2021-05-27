@@ -1,7 +1,7 @@
 <?php
-    include 'clasephp.php';
+    include 'operaciones.php';
     $ip=$_GET['ip'];
-    $objeto=new clasephp();
+    $objeto=new operaciones();
     $sql="SELECT * FROM Maquina WHERE ip='".$ip."'";
     $objeto->realizarConsultas($sql);
     while($fila=$objeto->extraerFilas()){
@@ -41,7 +41,7 @@
         ?>
     </div>
     <?php
-        $objeto=new clasephp();
+        $objeto=new operaciones();
         $ip2=$_POST["ip"];
         $nAlumno=$_POST["nombreAlumno"];
         $nombre=$_POST["nombre"];

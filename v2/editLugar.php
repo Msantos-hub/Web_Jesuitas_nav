@@ -1,7 +1,7 @@
 <?php
-include 'clasephp.php';
+include 'operaciones.php';
 $idLugar=$_GET['idLugar'];
-$objeto=new clasephp();
+$objeto=new operaciones();
 $sql="SELECT * FROM Lugar WHERE idLugar='".$idLugar."'";
 $objeto->realizarConsultas($sql);
 while($fila=$objeto->extraerFilas()){
@@ -29,7 +29,7 @@ while($fila=$objeto->extraerFilas()){
         ?>
     </div>
     <?php
-    $objeto=new clasephp();//instancia la clase
+    $objeto=new operaciones();//instancia la clase
     $idLugar2=$_POST["idLugar"];//recoge los datos del formulario
     $nombre=$_POST["nombre"];
     if($idLugar2 != NULL && $nombre != NULL){//si los datos no son null entra en el bucle y realiza la consulta

@@ -17,7 +17,7 @@
             <a href="crud.html">Volver</a>
         </form>
         <?php
-        $objeto=new clasephp();//instancia la clase
+        $objeto=new operaciones();//instancia la clase
         $idLugar=$_POST["idLugar"];//recoge los datos del formulario
         $nombre=$_POST["nombre"];
         if($idLugar != NULL && $nombre != NULL){//si los valores son distintos a null entra en el bucle

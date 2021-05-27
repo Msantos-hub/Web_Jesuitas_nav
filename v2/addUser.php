@@ -29,7 +29,7 @@
             <a href="crud.html">Volver</a>
         </form>
         <?php
-        $objeto=new clasephp();//instancia la clase
+        $objeto=new operaciones();//instancia la clase
         $ip=$_POST["ip"];//recoge los datos del formulario
         $nAlumno=$_POST["nombreAlumno"];
         $nombre=$_POST["nombre"];

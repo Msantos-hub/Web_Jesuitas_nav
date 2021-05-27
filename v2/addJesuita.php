@@ -19,7 +19,7 @@
             <a href="crud.html">Volver</a>
         </form>
         <?php
-        $objeto=new clasephp();//instancia la clase
+        $objeto=new operaciones();//instancia la clase
         $idJesuita=$_POST["idJesuita"];//recoge los datos del formulario
         $nombre=$_POST["nombre"];
         $firma=$_POST["Firma"];

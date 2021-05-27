@@ -32,7 +32,7 @@
 
         <?php
             require_once 'clasephp.php';
-            $objeto=new clasephp();
+            $objeto=new operaciones();
             /*Consulta para mostrar los 5 lugares con mas visitas*/
             $sql="select v.ip,lugar, count(v.ip) AS contador from Visita v INNER JOIN Lugar l ON l.ip=v.ip group by v.ip having contador ORDER by contador desc LIMIT 5";
             $objeto->realizarConsultas($sql);

@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php
-    require_once 'clasephp.php';
-    $objeto=new clasephp();
+    require_once 'operaciones.php';
+    $objeto=new operaciones();
     $sql="SELECT * FROM maquina";
     $objeto->realizarConsultas($sql);
     ?>

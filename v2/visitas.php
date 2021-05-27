@@ -7,8 +7,8 @@
 </head>
 <body>
     <?php
-    require_once 'clasephp.php';
-    $objeto=new clasephp();
+    require_once 'operaciones.php';
+    $objeto=new operaciones();
     $sql1="SELECT * FROM jesuita";
     $objeto->realizarConsultas($sql1);
     ?>
@@ -40,7 +40,7 @@
             $idJesuita = $_POST['nJesuita'];
             $idLugar = $_POST['nLugares'];
             if ($idJesuita != NULL && $idLugar != NULL) {//si los valores son distintos a null entra en el bucle
-                $sql3="INSERT INTO visita (ip,idJesuita,idLugar) VALUES ('".$idJesuita."','".$idJesuita."',".$idLugar.")";//consulta de insercion de datos
+                $sql3="INSERT INTO visita (idJesuita,idLugar,fechaHora) VALUES ('".$idJesuita."',".$idLugar.",NOW())";//consulta de insercion de datos
                 //print_r($sql3);
                 $objeto->realizarConsultas($sql3);//consulta de insercion de datos
                 if ($idJesuita = 1) {

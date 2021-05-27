@@ -11,7 +11,7 @@
     <h1>Lugares visitados por los jesuitas</h1><br/>
         <?php
             require_once 'clasephp.php';
-            $objeto=new clasephp();
+            $objeto=new operaciones();
             $sql = "SELECT * FROM Lugar";
             $objeto->realizarConsultas($sql);
             if($objeto->comprobarSelect()>0) {

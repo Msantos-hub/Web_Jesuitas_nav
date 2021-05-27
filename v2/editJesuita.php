@@ -1,7 +1,7 @@
 <?php
-include 'clasephp.php';
+include 'operaciones.php';
 $idJesuita=$_GET['idJesuita'];
-$objeto=new clasephp();
+$objeto=new operaciones();
 $sql="SELECT * FROM Jesuita WHERE idJesuita='".$idJesuita."'";
 $objeto->realizarConsultas($sql);
 while($fila=$objeto->extraerFilas()){
@@ -31,7 +31,7 @@ while($fila=$objeto->extraerFilas()){
         ?>
     </div>
     <?php
-    $objeto=new clasephp();
+    $objeto=new operaciones();
     $idJesuita2=$_POST["ip"];
     $nombre=$_POST["nombreAlumno"];
     $firma=$_POST["nombre"];
