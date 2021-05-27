@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    require_once 'operaciones.php';
+    $objeto=new operaciones();
+
+    $sql0="SELECT * FROM maquina WHERE idUsuario=$_POST['idUsuario']";
+    $objeto->realizarConsultas($sql0);
+    $fila=$objeto->extraerFilas();
+
+    $_SESSION['id']= $fila['ip'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +51,8 @@
         if (isset($_POST['enviar'])) {
             $idJesuita = $_POST['nJesuita'];
             $idLugar = $_POST['nLugares'];
-            if ($idJesuita != NULL && $idLugar != NULL) {//si los valores son distintos a null entra en el bucle
-                $sql3="INSERT INTO visita (idJesuita,idLugar,fechaHora) VALUES ('".$idJesuita."',".$idLugar.",NOW())";//consulta de insercion de datos
+            if ($_SESSION['id'] != $idJesuita && $idJesuita != NULL && $idLugar != NULL) {//si los valores son distintos a null entra en el bucle
+                $sql3="INSERT INTO visita (id,idJesuita,idLugar,fechaHora) VALUES ('".$_SESSION['id']."','".$idJesuita."',".$idLugar.",NOW())";//consulta de insercion de datos
                 //print_r($sql3);
                 $objeto->realizarConsultas($sql3);//consulta de insercion de datos
                 if ($idJesuita = 1) {
