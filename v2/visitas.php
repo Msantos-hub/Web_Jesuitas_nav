@@ -22,17 +22,17 @@
                     echo '<option value="'.$fila['idJesuita'].'">'.$fila['Nombre'].'</option>';
                 }
                 ?>
-            </select>
+            </select><br>
             <label>Lugares</label>
             <select name="nLugares">
-                <<?php
+                <?php
                 $sql2="SELECT * FROM Lugar";
                 $objeto->realizarConsultas($sql2);
                 while($fila=$objeto->extraerFilas()) {
                     echo '<option value="'.$fila['idLugar'].'">'.$fila['nombre'].'</option>';
                 }
                 ?>
-            </select>
+            </select><br>
             <input type="submit" value="Realizar Visita" name="enviar">
         </form>
         <?php
