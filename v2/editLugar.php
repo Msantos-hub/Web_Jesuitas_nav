@@ -1,5 +1,5 @@
 <?php
-include 'operaciones.php';
+include 'Operaciones.php';
 $idLugar=$_GET['idLugar'];
 $objeto=new operaciones();
 $sql="SELECT * FROM Lugar WHERE idLugar='".$idLugar."'";

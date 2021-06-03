@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once 'operaciones.php';
+    require_once 'Operaciones.php';
     $objeto=new operaciones();
 
     $sql0="SELECT * FROM maquina";
@@ -19,7 +19,7 @@
 </head>
 <body>
     <?php
-    require_once 'operaciones.php';
+    require_once 'Operaciones.php';
     $objeto=new operaciones();
     $sql1="SELECT * FROM jesuita";
     $objeto->realizarConsultas($sql1);

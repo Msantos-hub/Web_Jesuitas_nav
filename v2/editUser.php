@@ -1,7 +1,7 @@
 <?php
-    include 'operaciones.php';
+    include 'Operaciones.php';
     $ip=$_GET['ip'];
-    $objeto=new operaciones();
+    $objeto=new Operaciones();
     $sql="SELECT * FROM Maquina WHERE ip='".$ip."'";
     $objeto->realizarConsultas($sql);
     while($fila=$objeto->extraerFilas()){
@@ -41,7 +41,9 @@
         ?>
     </div>
     <?php
-        $objeto=new operaciones();
+        include 'Operaciones.php';
+        $objeto=new Operaciones();
+        if (isset($_POST['Agregar usuario']))
         $ip2=$_POST["ip"];
         $nAlumno=$_POST["nombreAlumno"];
         $nombre=$_POST["nombre"];

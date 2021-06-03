@@ -1,5 +1,5 @@
 <?php
-    require_once 'operaciones.php';
+    require_once 'Operaciones.php';
     $ip=$_GET['ip'];
     $objeto=new operaciones();
     $sql="DELETE FROM maquina WHERE ip='".$ip."'";

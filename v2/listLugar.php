@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-require_once 'operaciones.php';
+require_once 'Operaciones.php';
 $objeto=new operaciones(); //instancia la clase
 $sql="SELECT * FROM lugar"; //muestra todos los datos de la tabla lugar
 $objeto->realizarConsultas($sql);

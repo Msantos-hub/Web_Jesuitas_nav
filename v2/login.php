@@ -1,6 +1,6 @@
 <?php
 
-include('operaciones.php'); //include la clase
+include('Operaciones.php'); //include la clase
 session_start();//inicia la sesion
 $objeto=new operaciones();
 $tipo='u';

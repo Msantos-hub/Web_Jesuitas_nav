@@ -1,5 +1,5 @@
 <?php
-include 'operaciones.php';
+include 'Operaciones.php';
 $idJesuita=$_GET['idJesuita'];
 $objeto=new operaciones();
 $sql="SELECT * FROM Jesuita WHERE idJesuita='".$idJesuita."'";

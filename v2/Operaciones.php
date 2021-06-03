@@ -1,6 +1,6 @@
 <?php
     include 'conexion.php';
-    class operaciones
+    class Operaciones
     {
         public $mysqli;
         public $resultado;

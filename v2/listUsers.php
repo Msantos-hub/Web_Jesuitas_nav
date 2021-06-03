@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-    require_once 'operaciones.php';
+    require_once 'Operaciones.php';
     $objeto=new operaciones();
     $sql="SELECT * FROM maquina";
     $objeto->realizarConsultas($sql);
