@@ -25,26 +25,34 @@
             <input type="text" name="idUsuario"><br><br>
             <label>password</label>
             <input type="text" name="password"><hr>
-            <input type="submit" value="Agregar usuario">
+            <input type="submit" value="Agregar usuario" name="enviar">
             <a href="crud.html">Volver</a>
         </form>
         <?php
-        $objeto=new operaciones();//instancia la clase
-        $ip=$_POST["ip"];//recoge los datos del formulario
-        $nAlumno=$_POST["nombreAlumno"];
-        $nombre=$_POST["nombre"];
-        $idJ=$_POST["idJesuita"];
-        $idL=$_POST["idLugar"];
-        $tipo=$_POST["tipo"];
-        $idU=$_POST["idUsuario"];
-        $pass=$_POST["password"];
-        if($ip != NULL && $nAlumno != NULL && $nombre != NULL && $idJ != NULL && $idL != NULL && $idU != NULL && $tipo != NULL && $pass != NULL){//si los valores son distintos a null entra en el bucle
-            $sql="INSERT INTO maquina(ip,nombreAlumno,nombre,idJesuita,idLugar,tipo,idUsuario,password) VALUES ('".$ip.",".$nAlumno.",".$nombre.",".$idJ.",".$idL.",".$tipo.",".$idU.",".$pass."')";//consulta de insercion de datos
-            $objeto->realizarConsultas($sql);//consulta de insercion de datos
-            if($ip =1){
-                header("location:listUsers.php");//si hay un usuario vuelve a la pagina anterior
+            require 'operaciones.php';
+            if (isset($_POST['enviar']))
+            {
+                $ip=$_POST["ip"];//recoge los datos del formulario
+                $nAlumno=$_POST["nombreAlumno"];
+                $nombre=$_POST["nombre"];
+                $idJ=$_POST["idJesuita"];
+                $idL=$_POST["idLugar"];
+                $tipo=$_POST["tipo"];
+                $idU=$_POST["idUsuario"];
+                $pass=$_POST["password"];
+                if($ip != NULL && $nAlumno != NULL && $nombre != NULL && $idU != NULL && $tipo != NULL && $pass != NULL)
+                {//si los valores son distintos a null entra en el bucle
+                    $sql="INSERT INTO maquina(ip,nombreAlumno,nombre,idJesuita,idLugar,tipo,idUsuario,password) 
+                            VALUES ('".$ip."','".$nAlumno."','".$nombre."','".$idJ."','".$idL."','".$tipo."','".$idU."','".$pass."')";//consulta de insercion de datos
+                    $objeto=new operaciones();
+                    $objeto->realizarConsultas($sql);//consulta de insercion de datos
+                    if($ip =1)
+                    {
+                        echo 'Maquina añadido correctamente.';
+                        header("location:listUsers.php");//si hay un usuario vuelve a la pagina anterior
+                    }
+                }echo 'Datos incorrectos';
             }
-        }
         ?>
     </div>
 </div>

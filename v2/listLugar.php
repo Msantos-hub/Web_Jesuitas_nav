@@ -6,12 +6,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<?php
-require_once 'Operaciones.php';
-$objeto=new operaciones(); //instancia la clase
-$sql="SELECT * FROM lugar"; //muestra todos los datos de la tabla lugar
-$objeto->realizarConsultas($sql);
-?>
 <div id="general">
     <table>
         <thead>
@@ -23,17 +17,20 @@ $objeto->realizarConsultas($sql);
         </thead>
         <tbody>
         <?php
-        while($fila=$objeto->extraerFilas()){
-            //bucle que  muestra en una tabla todos los datos de la tabla lugar
-            ?>
-            <tr>
-                <td><?php echo $fila['idLugar'] ?></td>
-                <td><?php echo $fila['nombre'] ?></td>
-                <td><a href="editLugar.php?idLugar=<?php echo $fila['idLugar']?>">Editar</a></td>
-                <td><a href="deleteLugar.php?idLugar=<?php echo $fila['idLugar']?>">Eliminar</a></td>
-            </tr>
-            <?php
-        }
+            require 'Operaciones.php';
+            $objeto=new operaciones(); //instancia la clase
+            $sql="SELECT * FROM lugar"; //muestra todos los datos de la tabla lugar
+            $objeto->realizarConsultas($sql);
+            while($fila=$objeto->extraerFilas())
+            {
+                //bucle que  muestra en una tabla todos los datos de la tabla lugar
+                echo '<tr>';
+                    echo '<td>'.$fila['idLugar'].'</td>';
+                    echo '<td>'.$fila['nombre'].'</td>';
+                    echo '<td><a href="editLugar.php?idLugar='.$fila['idLugar'].'"> Editar </a> || <a href="deleteLugar.php?idLugar='.$fila['idLugar'].'"> Eliminar </a></td>';
+
+                echo '</tr>';
+            }
         ?>
         </tbody>
     </table>
