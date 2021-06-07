@@ -16,9 +16,9 @@
             <label>Nombre</label>
             <input type="text" name="nombre"><br><br>
             <label>idJesuita</label>
-            <input type="text" name="idjesuita"><br><br>
+            <input type="text" name="idJesuita"><br><br>
             <label>idLugar</label>
-            <input type="text" name="idlugar"><br><br>
+            <input type="text" name="idLugar"><br><br>
             <label>tipo</label>
             <input type="text" name="tipo"><br><br>
             <label>idUsuario</label>
@@ -49,7 +49,8 @@
                     if($ip =1)
                     {
                         echo 'Maquina añadido correctamente.';
-                        header("location:listUsers.php");//si hay un usuario vuelve a la pagina anterior
+                        print_r($sql);
+                        //header("location:listUsers.php");//si hay un usuario vuelve a la pagina anterior
                     }
                 }echo 'Datos incorrectos';
             }
