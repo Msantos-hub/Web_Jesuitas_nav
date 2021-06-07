@@ -49,10 +49,10 @@
                     if($ip =1)
                     {
                         echo 'Maquina añadido correctamente.';
-                        print_r($sql);
-                        //header("location:listUsers.php");//si hay un usuario vuelve a la pagina anterior
-                    }
-                }echo 'Datos incorrectos';
+                        //print_r($sql);
+                        header("location:listUsers.php");//si hay un usuario vuelve a la pagina anterior
+                    }echo 'Datos incorrectos';
+                }
             }
         ?>
     </div>

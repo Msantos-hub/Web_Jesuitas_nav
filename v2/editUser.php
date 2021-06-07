@@ -26,7 +26,7 @@
                     echo '<label>idJesuita </label>';
                     echo '<input type="text" name="idJesuita" value="'.$fila['idJesuita'].'"><br>';
                     echo '<label>idLugar </label>';
-                    echo '<input type="text" name="idLugar" value="'.$fila['idLugar'].'"><br>';
+                    echo '<input type="text" name="idLugar" value="'.$fila['idLugar'].'"><br>';//desplegable que muestre el suyo propio y luego muestre los demas
                     echo '<label>tipo </label>';
                     echo '<input type="text" name="tipo" value="'.$fila['tipo'].'"><br>';
                     echo '<label>idUsuario </label>';

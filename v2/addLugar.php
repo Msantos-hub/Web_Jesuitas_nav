@@ -26,7 +26,6 @@
                 if($idLugar != NULL && $nombre != NULL)
                 {//si los valores son distintos a null entra en el bucle
                     $sql="INSERT INTO lugar(idLugar,nombre) VALUES ('".$idLugar."','".$nombre."')";//consulta de insercion de datos
-                    $objeto=new operaciones();
                     $objeto->realizarConsultas($sql);
                     if($idLugar =1)
                     {
