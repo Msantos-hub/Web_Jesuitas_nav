@@ -31,8 +31,8 @@ CREATE TABLE Visita(
 	idJesuita CHAR(15) NOT NULL UNIQUE ,
 	idLugar TINYINT UNSIGNED NOT NULL UNIQUE ,
 	fechaHora DATE NOT NULL,
-	CONSTRAINT FK_visitaJesuita FOREIGN KEY (idJesuita) REFERENCES Jesuita(idJesuita),
-	CONSTRAINT FK_visitalugar FOREIGN KEY (idLugar) REFERENCES Lugar(idLugar)
+	CONSTRAINT FK_visitaJesuita FOREIGN KEY (idJesuita) REFERENCES Maquina(idJesuita),
+	CONSTRAINT FK_visitalugar FOREIGN KEY (idLugar) REFERENCES Maquina(idLugar)
 );
 
 ALTER TABLE Maquina ADD CONSTRAINT CH_tipo CHECK (tipo='a' OR tipo='u');
